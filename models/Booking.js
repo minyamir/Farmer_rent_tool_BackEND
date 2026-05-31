@@ -13,7 +13,7 @@ const bookingSchema = mongoose.Schema({
     }
 }, { timestamps: true });
 
-
+// --- YOU MUST ADD THIS STATIC METHOD ---
 bookingSchema.statics.isAvailable = async function (machineId, start, end) {
     const conflict = await this.findOne({
         machine: machineId,
