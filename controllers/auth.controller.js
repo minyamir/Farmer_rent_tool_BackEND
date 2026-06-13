@@ -23,7 +23,6 @@ export const registerUser = async (req, res) => {
     name,
     email,
     password,
-    phone,
     role: role || 'renter', // fallback to renter
   });
 
