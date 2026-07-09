@@ -2,6 +2,9 @@ import User from '../models/User.js';
 import jwt from 'jsonwebtoken';
 
 
+const generateToken = (id) => {
+  return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: '30d' });
+};
 // Register
 export const registerUser = async (req, res) => {
   const { name, email, password, role } = req.body;
