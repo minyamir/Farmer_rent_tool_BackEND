@@ -46,7 +46,8 @@ const machineSchema = mongoose.Schema({
   timestamps: true 
 });
 
-
+// Indexing for faster search (makes your Marketplace UI feel snappy)
+machineSchema.index({ name: 'text', location: 'text' });
 
 const Machine = mongoose.model('Machine', machineSchema);
 export default Machine;
