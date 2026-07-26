@@ -1,6 +1,11 @@
 import mongoose from 'mongoose';
 
-
+const machineSchema = mongoose.Schema({
+  name: { 
+    type: String, 
+    required: [true, 'Please add a machine name'],
+    trim: true 
+  },
   description: { 
     type: String, 
     required: [true, 'Please add a detailed description'],
